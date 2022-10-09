@@ -7,18 +7,8 @@ const bot = mineflayer.createBot({
     username: 'Afk_miner'
 })
 
-let password = "komiljon" // sizning parolingiz
-
-bot.on('messagestr', (message) => {
-    console.log(message)
-
-    if (message.includes("/register")) {
-        bot.chat(`/register ${password} ${password}`)
-    }
-    
-    if (message.includes("/login")) {
-        bot.chat(`/login ${password}`)
-    }
+bot.once("spawn", () => {
+  bot.chat("/login komiljon");
 })
 
 bot.on('bot',(username,message)=>{
